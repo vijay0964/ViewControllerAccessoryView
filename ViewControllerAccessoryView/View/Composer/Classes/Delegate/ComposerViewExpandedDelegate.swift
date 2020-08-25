@@ -123,11 +123,6 @@ public extension ComposerViewExpandedDelegate {
                 composerView.textView.resignFirstResponder()
                 self.composerView(composerView, didPressUploadButton: button)
             }
-            
-            if button === composerView.rightButton2 {
-                composerView.textView.resignFirstResponder()
-                self.composerView(composerView, didPressChatAnimationButton: button)
-            }
         }
 
         if eventType == .touchUpOutside {

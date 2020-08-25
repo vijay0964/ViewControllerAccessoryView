@@ -91,23 +91,6 @@ public class ComposerView: UIView, ComposerLocalizable {
     }
 
     /**
-     The button that stays in the right side of the composer.
-     */
-    public let rightButton2 = tap(ComposerButton()) {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.setImage(ComposerAssets.chatAnimationUnSelectedImage, for: .normal)
-        $0.setImage(ComposerAssets.chatAnimationSelectedImage, for: .selected)
-
-        $0.addTarget(self, action: #selector(touchUpInsideButton), for: .touchUpInside)
-        $0.addTarget(self, action: #selector(touchUpOutsideButton), for: .touchUpOutside)
-        $0.addTarget(self, action: #selector(touchDownInButton), for: .touchDown)
-        $0.addTarget(self, action: #selector(touchDragInsideButton), for: .touchDragInside)
-        $0.addTarget(self, action: #selector(touchDragOutsideButton), for: .touchDragOutside)
-
-        $0.setContentHuggingPriority(.required, for: .horizontal)
-    }
-    
-    /**
      The text view used to compose the message.
      */
     public let textView = tap(ComposerTextView()) {
@@ -206,7 +189,6 @@ public class ComposerView: UIView, ComposerLocalizable {
 
         containerView.addSubview(leftButton)
         containerView.addSubview(rightButton)
-        containerView.addSubview(rightButton2)
         containerView.addSubview(textView)
         containerView.addSubview(componentStackView)
         containerView.addSubview(topSeparatorView)
@@ -217,7 +199,7 @@ public class ComposerView: UIView, ComposerLocalizable {
     // MARK: Constraints
 
     lazy var textViewLeadingConstraint: NSLayoutConstraint = {
-        textView.leadingAnchor.constraint(equalTo: leftButton.trailingAnchor, constant: 0)
+        textView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0)
     }()
 
     lazy var containerViewLeadingConstraint: NSLayoutConstraint = {
@@ -261,17 +243,11 @@ public class ComposerView: UIView, ComposerLocalizable {
             textView.trailingAnchor.constraint(equalTo: rightButton.leadingAnchor, constant: 0),
             textView.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor, constant: -layoutMargins.bottom),
 
-            // rightButton2 constraints
-
-            rightButton2.trailingAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.trailingAnchor, constant: -layoutMargins.right*2),
-            rightButton2.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor, constant:  -layoutMargins.bottom*2),
-
             // rightButton constraints
 
-            rightButton.trailingAnchor.constraint(equalTo: rightButton2.leadingAnchor, constant: -layoutMargins.right*2),
+            rightButton.trailingAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.trailingAnchor, constant: -layoutMargins.right*2),
             rightButton.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor, constant:  -layoutMargins.bottom*2),
 
-            
             // leftButton constraints
 
             leftButton.leadingAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.leadingAnchor, constant: layoutMargins.left*2),
@@ -318,7 +294,6 @@ public extension ComposerView {
 
         leftButton.isUserInteractionEnabled = false
         rightButton.isUserInteractionEnabled = false
-        rightButton2.isUserInteractionEnabled = false
         isTextInputEnabled = false
 
         currentDelegate.composerView(self, willConfigureOverlayView: overlayView, with: userData)
@@ -330,7 +305,6 @@ public extension ComposerView {
 
         leftButton.isUserInteractionEnabled = true
         rightButton.isUserInteractionEnabled = true
-        rightButton2.isUserInteractionEnabled = true
         isTextInputEnabled = true
     }
 }
@@ -341,7 +315,6 @@ public extension ComposerView {
     func configureButtons() {
         currentDelegate.composerView(self, willConfigureButton: leftButton)
         currentDelegate.composerView(self, willConfigureButton: rightButton)
-        currentDelegate.composerView(self, willConfigureButton: rightButton2)
     }
 }
 
