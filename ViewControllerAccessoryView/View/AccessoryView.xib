@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="taB-2I-Q9e" customClass="AccessoryView" customModule="ViewControllerAccessoryView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Send Message..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G6V-Mr-zXM">
+                    <rect key="frame" x="5" y="5" width="344" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYk-Pb-dcf">
+                    <rect key="frame" x="354" y="7.5" width="50" height="35"/>
+                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="CWi-Pz-Svd"/>
+                        <constraint firstAttribute="height" constant="35" id="X2F-MQ-5vu"/>
+                    </constraints>
+                    <state key="normal" title="Send">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="sendBtnAction" destination="taB-2I-Q9e" eventType="touchUpInside" id="K2M-8x-THt"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="G6V-Mr-zXM" firstAttribute="leading" secondItem="kIU-kQ-4eG" secondAttribute="leading" constant="5" id="8s9-D0-ZVz"/>
+                <constraint firstItem="VYk-Pb-dcf" firstAttribute="leading" secondItem="G6V-Mr-zXM" secondAttribute="trailing" constant="5" id="fdg-Gu-cph"/>
+                <constraint firstItem="G6V-Mr-zXM" firstAttribute="top" secondItem="taB-2I-Q9e" secondAttribute="top" constant="5" id="l0A-ex-bJq"/>
+                <constraint firstAttribute="bottom" secondItem="G6V-Mr-zXM" secondAttribute="bottom" constant="5" id="ofK-wC-Lfi"/>
+                <constraint firstItem="kIU-kQ-4eG" firstAttribute="trailing" secondItem="VYk-Pb-dcf" secondAttribute="trailing" constant="10" id="sOG-SI-kU0"/>
+                <constraint firstItem="VYk-Pb-dcf" firstAttribute="centerY" secondItem="taB-2I-Q9e" secondAttribute="centerY" id="xpl-Yy-UXR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="kIU-kQ-4eG"/>
+            <connections>
+                <outlet property="sendBtn" destination="VYk-Pb-dcf" id="Tww-wL-2Px"/>
+            </connections>
+            <point key="canvasLocation" x="-120.28985507246378" y="57.924107142857139"/>
+        </view>
+    </objects>
+</document>

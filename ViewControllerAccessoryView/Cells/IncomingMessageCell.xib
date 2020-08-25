@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0HH-eT-dwA" customClass="IncomingMessageCell" customModule="ViewControllerAccessoryView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Qx7-RR-rVp">
+                <rect key="frame" x="0.0" y="0.0" width="358" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDP-bs-66m">
+                        <rect key="frame" x="5" y="5" width="162" height="105"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incoming Messages" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7b-TU-cH9">
+                                <rect key="frame" x="5" y="5" width="152" height="95"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="M7b-TU-cH9" secondAttribute="bottom" constant="5" id="1yG-xD-p5R"/>
+                            <constraint firstItem="M7b-TU-cH9" firstAttribute="leading" secondItem="vDP-bs-66m" secondAttribute="leading" constant="5" id="BKA-q1-xAO"/>
+                            <constraint firstAttribute="trailing" secondItem="M7b-TU-cH9" secondAttribute="trailing" constant="5" id="Vsn-wO-1fZ"/>
+                            <constraint firstItem="M7b-TU-cH9" firstAttribute="top" secondItem="vDP-bs-66m" secondAttribute="top" constant="5" id="wZf-ga-cWf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="vDP-bs-66m" secondAttribute="bottom" constant="5" id="AIP-dM-iRq"/>
+                    <constraint firstItem="vDP-bs-66m" firstAttribute="top" secondItem="Qx7-RR-rVp" secondAttribute="top" constant="5" id="BsR-RN-wi6"/>
+                    <constraint firstItem="vDP-bs-66m" firstAttribute="leading" secondItem="Qx7-RR-rVp" secondAttribute="leading" constant="5" id="Jk1-eb-h2c"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vDP-bs-66m" secondAttribute="trailing" constant="50" id="gC1-QX-WaU"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="358" height="115"/>
+            <connections>
+                <outlet property="content" destination="M7b-TU-cH9" id="VOx-Cd-GOO"/>
+                <outlet property="messageView" destination="vDP-bs-66m" id="fzL-r9-PB8"/>
+            </connections>
+            <point key="canvasLocation" x="2.8985507246376816" y="99.441964285714278"/>
+        </collectionViewCell>
+    </objects>
+</document>
